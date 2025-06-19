@@ -31,24 +31,52 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
+    permissions: ['geolocation'],
+    locale: 'en-US'
   },
 
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],
+             
+       },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: { ...devices['Desktop Firefox'],
+        
+       },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
+      use: { ...devices['Desktop Safari'],
+        permissions: ['geolocation']
+       },
     },
+
+
+    {
+      name: 'Frankfurt',
+      use: {
+        ...devices['Desktop Chrome'],
+        geolocation: { longitude: 8.6821, latitude: 50.1109 },
+        locale: 'en-US',
+        timezoneId: 'Europe/Berlin',
+      },
+    },
+    {
+      name: 'Tokyo',
+      use: {
+        ...devices['Desktop Chrome'],
+        geolocation: { longitude: 139.6917, latitude: 35.6895 },
+        locale: 'en-US',
+        timezoneId: 'Asia/Tokyo',
+      },
+    }
 
     /* Test against mobile viewports. */
     // {
