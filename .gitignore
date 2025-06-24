@@ -5,3 +5,7 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+.env
+
+ git config --global user.email "tejakrishna1106@gmail.com"
+  git config --global user.name "tejakrishna1106"
