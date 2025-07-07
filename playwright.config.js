@@ -61,6 +61,7 @@ export default defineConfig({
 
     {
       name: 'Frankfurt',
+      testMatch: '**/EU-connect.spec.js',
       use: {
         ...devices['Desktop Chrome'],
         geolocation: { longitude: 8.6821, latitude: 50.1109 },
@@ -70,6 +71,7 @@ export default defineConfig({
     },
     {
       name: 'Tokyo',
+      testMatch: '**/ASIA-connect.spec.js',
       use: {
         ...devices['Desktop Chrome'],
         geolocation: { longitude: 139.6917, latitude: 35.6895 },
